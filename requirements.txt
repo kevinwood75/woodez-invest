@@ -1,3 +1,5 @@
 pandas
 matplotlib
 pillow
+yfinance
+pandas_datareader

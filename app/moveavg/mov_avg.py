@@ -1,16 +1,19 @@
 import pandas as pd
+from pandas_datareader import data as pdr
+import yfinance as yf
 import matplotlib.pyplot as plt
 
 #datafile = 'SPY.csv'
 #datafile = 'MSFT.csv'
-datafile = '../../data/SPLK.csv'
+# datafile = '../../data/SPLK.csv'
 #This creates a dataframe from the CSV file:
-data = pd.read_csv(datafile, index_col = 'Date')
+yf.pdr_override()
+data = pdr.get_data_yahoo("MSFT", start="2019-01-01", end="2019-10-01")
+#data = pd.read_csv(datafile, index_col = 'Date')
 close = data['Adj Close']
 close.index = pd.to_datetime(close.index)
 # print("{0}".format(close))
 # close.plot()
-# plt.show()
 sma50 = close.rolling(window=50).mean()
 #print("{0}".format(sma50))
 plt.style.use('fivethirtyeight')
@@ -24,5 +27,5 @@ plt.xlabel('Date')
 plt.ylabel('Adjusted closing price ($)')
 plt.title('Price with a single Simple Moving Average')
 plt.legend()
-plt.savefig('../../images/SPLK.jpg')
+plt.savefig('../../images/MSFT.jpg')
 #plt.show()
