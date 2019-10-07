@@ -35,5 +35,5 @@ def stock_graph(**kwargs):
     plt.legend()
 ##    plt.savefig("../../images/{0}.jpg".format(ticker))
 ##    plt.savefig("/Users/kwood/projects/woodez-invest/app/images/{0}.jpg".format(ticker))
-    plt.savefig("../images/{0}.jpg".format(ticker))
+    plt.savefig("/var/www/html/woodezfi/{0}.jpg".format(ticker))
 ## stock_graph(ticker = 'SPLK', starts = '2019-01-01', ends = '2019-10-04')
