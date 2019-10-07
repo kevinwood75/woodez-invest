@@ -10,9 +10,9 @@ if len(sys.argv) < 2:
 ends = str(datetime.today().strftime('%Y-%m-%d'))
 
 count = 0
-print("{0}".format(str(sys.argv)))
 for symbol in sys.argv:
-    if count is not 0:
+    print("{}".format(str(symbol)))
+    if count is not 0:    
        mv_avg.stock_graph(ticker = symbol, starts = '2019-01-01', ends = ends)
        count += 1
 
