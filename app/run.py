@@ -12,7 +12,8 @@ ends = str(datetime.today().strftime('%Y-%m-%d'))
 count = 0
 for symbol in sys.argv:
     print("{}".format(str(symbol)))
-    if count is not 0:    
+    if count > 0:
+       print("{}".format(str(symbol)))  
        mv_avg.stock_graph(ticker = symbol, starts = '2019-01-01', ends = ends)
        count += 1
 
