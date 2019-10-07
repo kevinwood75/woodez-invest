@@ -27,13 +27,10 @@ def stock_graph(**kwargs):
     plt.plot(priceSma_df[starts:ends]['Adj Close'], label="{0} Adj Close".format(ticker), linewidth = 2)
     plt.plot(priceSma_df[starts:ends]['SMA 20'], label='20 days rolling SMA', linewidth = 1.5)
     plt.plot(priceSma_df[starts:ends]['SMA 50'], label='50 days rolling SMA', linewidth = 1.5)
-##    plt.plot(close, label="{0} Adj Close".format(ticker), linewidth = 2)
-##    plt.plot(sma50, label='50 day rolling SMA', linewidth = 1.5)
+
     plt.xlabel('Date')
     plt.ylabel('Adjusted closing price ($)')
-    plt.title("{0} Price with a single Simple Moving Average".format(ticker))
+    plt.title("{0} Price with Moving Average".format(ticker))
     plt.legend()
-##    plt.savefig("../../images/{0}.jpg".format(ticker))
-##    plt.savefig("/Users/kwood/projects/woodez-invest/app/images/{0}.jpg".format(ticker))
     plt.savefig("/var/www/html/woodezfi/{0}.jpg".format(ticker))
-## stock_graph(ticker = 'SPLK', starts = '2019-01-01', ends = '2019-10-04')
+
