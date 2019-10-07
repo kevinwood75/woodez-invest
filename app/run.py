@@ -15,5 +15,5 @@ for symbol in sys.argv:
     if count > 0:
        print("{}".format(str(symbol)))  
        mv_avg.stock_graph(ticker = symbol, starts = '2019-01-01', ends = ends)
-       count += 1
+    count += 1
 
