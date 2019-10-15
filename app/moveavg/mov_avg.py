@@ -37,5 +37,5 @@ def stock_graph(**kwargs):
     plt.ylabel('Adjusted closing price ($)')
     plt.title("{0} Price with Moving Average".format(ticker))
     plt.legend()
-    plt.savefig("/var/www/html/woodezfi/{0}.jpg".format(ticker))
+    plt.savefig("/var/www/html/woodezfi/images/{0}.jpg".format(ticker))
 
