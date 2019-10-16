@@ -17,8 +17,9 @@ def stock_graph(**kwargs):
     sma100 = close.rolling(window=100).mean()
     sma50 = close.rolling(window=50).mean()
     sma20 = close.rolling(window=20).mean()
-    print(close[ends])
-    print(sma20[ends])
+    if int(close[ends]) < int(sma20[ends]):
+       pricdiff = int(sma20[ends]) - int(close[ends])
+       print("Buy {0} its close is lower then 20 day moving average by {1}({2})".format(ticker,pricdiff,close[ends]))
     sma15 = close.rolling(window=15).mean()
     priceSma_df = pd.DataFrame({
         'Adj Close' : close,
