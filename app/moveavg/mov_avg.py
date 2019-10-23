@@ -13,12 +13,11 @@ def stock_graph(**kwargs):
     yf.pdr_override()
     data = pdr.get_data_yahoo(ticker, start=starts, end=ends)
     close = data['Adj Close']
-    print(close)
-    print("test{0}".format(close[ends]))
     close.index = pd.to_datetime(close.index)
     sma100 = close.rolling(window=100).mean()
     sma50 = close.rolling(window=50).mean()
     sma20 = close.rolling(window=20).mean()
+    print(sma20)
     if float(close[ends]) < float(sma20[ends]):
        pricdiff = float(sma20[ends]) - float(close[ends])
        print("Buy {0} its close is lower then 20 day moving average by {1}({2})".format(ticker,pricdiff,close[ends]))
