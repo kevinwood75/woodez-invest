@@ -14,6 +14,7 @@ def stock_graph(**kwargs):
     data = pdr.get_data_yahoo(ticker, start=starts, end=ends)
     close = data['Adj Close']
     print(close)
+    print("test{0}".format(close[ends]))
     close.index = pd.to_datetime(close.index)
     sma100 = close.rolling(window=100).mean()
     sma50 = close.rolling(window=50).mean()
