@@ -3,3 +3,4 @@ matplotlib
 pillow
 yfinance
 pandas_datareader
+asyncio
