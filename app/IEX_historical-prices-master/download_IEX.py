@@ -194,7 +194,7 @@ if __name__ == '__main__':
 
     init_logging()
     todo_dates = get_dates()
-
+    print(todo_dates)
     for date in todo_dates:
 
         # Conduct download
