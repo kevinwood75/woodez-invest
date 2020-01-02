@@ -4,7 +4,8 @@ import numpy as np
 
 #tslaQuote = web.DataReader('TSLA', data_source='yahoo', start='2011-01-01', end='2019-10-31')
 #print(tslaQuote)
-stocks =['SPY', 'MSFT', 'SPLK', 'TWLO', 'SNAP', 'NOK', 'BYL.TO', 'CNQ.TO', 'NPI.TO', 'BBD-B.TO', 'MFC.TO']
+# stocks =['SPY', 'MSFT', 'SPLK', 'TWLO', 'SNAP', 'NOK', 'BYL.TO', 'CNQ.TO', 'NPI.TO', 'BBD-B.TO']
+stocks = ['MSFT']
 numAssets = len(stocks)
 source = 'yahoo'
 start = '2015-01-01'
