@@ -14,7 +14,7 @@ def stock_graph(**kwargs):
     data = pdr.get_data_yahoo(ticker, start=starts, end=ends)
     close = data['Adj Close']
     close.index = pd.to_datetime(close.index)
-    sma100 = close.rolling(window=100).mean()
+    sma200 = close.rolling(window=200).mean()
     sma50 = close.rolling(window=50).mean()
     sma20 = close.rolling(window=20).mean()
     current_avg = sma20.tail(1).values[0]
@@ -30,7 +30,7 @@ def stock_graph(**kwargs):
         'SMA 15': sma15,
         'SMA 20': sma20,
         'SMA 50': sma50,
-        'SMA 100': sma100
+        'SMA 200': sma200
     })
 
     plt.style.use('fivethirtyeight')
@@ -39,7 +39,7 @@ def stock_graph(**kwargs):
     plt.plot(priceSma_df[starts:ends]['SMA 15'], label='15 days rolling SMA', linewidth = 1.5)
     plt.plot(priceSma_df[starts:ends]['SMA 20'], label='20 days rolling SMA', linewidth = 1.5)
     plt.plot(priceSma_df[starts:ends]['SMA 50'], label='50 days rolling SMA', linewidth = 1.5)
-    plt.plot(priceSma_df[starts:ends]['SMA 100'], label='100 days rolling SMA', linewidth = 1.5)
+    plt.plot(priceSma_df[starts:ends]['SMA 200'], label='100 days rolling SMA', linewidth = 1.5)
     plt.xlabel('Date')
     plt.ylabel('Adjusted closing price ($)')
     plt.title("{0} Price with Moving Average".format(ticker))
