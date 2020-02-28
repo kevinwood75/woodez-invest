@@ -17,6 +17,7 @@ def stock_graph(**kwargs):
     sma200 = close.rolling(window=200).mean()
     sma50 = close.rolling(window=50).mean()
     sma20 = close.rolling(window=20).mean()
+    sma15 = close.rolling(window=15).mean()
     current_avg = sma20.tail(1).values[0]
 ##    if float(close[ends]) < float(current_avg):
 ##       pricdiff = float(current_avg) - float(close[ends])
@@ -39,7 +40,7 @@ def stock_graph(**kwargs):
     plt.plot(priceSma_df[starts:ends]['SMA 15'], label='15 days rolling SMA', linewidth = 1.5)
     plt.plot(priceSma_df[starts:ends]['SMA 20'], label='20 days rolling SMA', linewidth = 1.5)
     plt.plot(priceSma_df[starts:ends]['SMA 50'], label='50 days rolling SMA', linewidth = 1.5)
-    plt.plot(priceSma_df[starts:ends]['SMA 200'], label='100 days rolling SMA', linewidth = 1.5)
+    plt.plot(priceSma_df[starts:ends]['SMA 200'], label='200 days rolling SMA', linewidth = 1.5)
     plt.xlabel('Date')
     plt.ylabel('Adjusted closing price ($)')
     plt.title("{0} Price with Moving Average".format(ticker))
