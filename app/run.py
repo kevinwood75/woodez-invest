@@ -7,7 +7,8 @@ if len(sys.argv) < 2:
     print("not enough aruments provided. exiting")
     exit(1)
 
-ends = str(datetime.today()+ timedelta(days=1).strftime('%Y-%m-%d'))
+addday = datetime.today() + timedelta(days=1)
+ends = str(addday.strftime('%Y-%m-%d'))
 
 count = 0
 for symbol in sys.argv:
