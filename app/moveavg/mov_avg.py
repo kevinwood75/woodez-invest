@@ -12,10 +12,12 @@ def stock_graph(**kwargs):
     ends = kwargs['ends']
     yf.pdr_override()
     data = pdr.get_data_yahoo(ticker, start=starts, end=ends)
-    print(data)
+    # print(data['Adj Close'])
     close = data['Adj Close']
     close.index = pd.to_datetime(close.index)
-    sma200 = close.rolling(window=200).mean()
+    sma200 = close.rolling(window=200).mean().tail(800)
+    ####print(closechange)
+    #####print(closechange)
     sma50 = close.rolling(window=50).mean()
     sma20 = close.rolling(window=20).mean()
     sma15 = close.rolling(window=15).mean()
@@ -27,8 +29,13 @@ def stock_graph(**kwargs):
 ##       pricdiff = float(close[ends]) - float(sma20[ends])
 ##       print("Sell {0} its close is Higher then 20 day moving average by {1}({2})".format(ticker,pricdiff,close[ends]))
     sma15 = close.rolling(window=15).mean()
+##    priceSma_df = pd.DataFrame({
+##          'close change': closechange
+##   })
+    ##print(priceSma_df)
+    ###print(type(priceSma_df))
     priceSma_df = pd.DataFrame({
-        'Adj Close' : close,
+        'Adj Close': close,
         'SMA 15': sma15,
         'SMA 20': sma20,
         'SMA 50': sma50,
@@ -47,4 +54,3 @@ def stock_graph(**kwargs):
     plt.title("{0} Price with Moving Average".format(ticker))
     plt.legend()
     plt.savefig("/var/www/html/stocks/images/{0}.jpg".format(ticker))
-
