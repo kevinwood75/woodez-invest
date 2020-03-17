@@ -36,7 +36,7 @@ def stock_graph(**kwargs):
     }) 
 
     chgprice = priceSma_df.tail(800)
-    print(chgprice['Price Chg'].tail(1))
+    print(chgprice['Price Chg'].tail(10))
     plt.style.use('fivethirtyeight')
     plt.figure(figsize = (12,6))
     plt.plot(chgprice[starts:ends]['Adj Close'], label="Adj Close".format(ticker), linewidth = 2)
