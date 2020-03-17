@@ -33,15 +33,14 @@ def stock_graph(**kwargs):
         'SMA 50': sma50,
         'SMA 200': sma200,
         'Price Chg': close - sma200
-    })
+    }) 
 
     chgprice = priceSma_df.tail(800)
-
-
+    print(chgprice['Price Chg'].tail(1))
     plt.style.use('fivethirtyeight')
     plt.figure(figsize = (12,6))
-    plt.plot(chgprice[starts:ends]['Adj Close'], label="{0} Adj Close".format(ticker), linewidth = 2)
-    plt.plot(chgprice[starts:ends]['Price Chg'], label="{0} Adj Close to 200day MA difference".format(ticker), linewidth = 2) 
+    plt.plot(chgprice[starts:ends]['Adj Close'], label="Adj Close".format(ticker), linewidth = 2)
+    plt.plot(chgprice[starts:ends]['Price Chg'], label="Adj Close to 200day MA difference".format(ticker), linewidth = 2) 
     plt.plot(chgprice[starts:ends]['SMA 15'], label='15 days rolling SMA', linewidth = 1.5)
     plt.plot(chgprice[starts:ends]['SMA 20'], label='20 days rolling SMA', linewidth = 1.5)
     plt.plot(chgprice[starts:ends]['SMA 50'], label='50 days rolling SMA', linewidth = 1.5)
