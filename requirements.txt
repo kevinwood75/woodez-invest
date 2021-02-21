@@ -4,3 +4,5 @@ pillow
 yfinance
 pandas_datareader
 asyncio
+yahoo_fin
+requests_html

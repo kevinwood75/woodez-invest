@@ -8,4 +8,7 @@ https://aroussi.com/post/python-yahoo-finance
 stockprice changes:
 https://towardsdatascience.com/how-to-be-a-successful-investor-simple-portfolio-analysis-with-python-7b66fc90fa68
 
+https://algotrading101.com/learn/yahoo-finance-api-guide/
+https://aroussi.com/post/download-options-data
+
 pip install -r requirements.txt
